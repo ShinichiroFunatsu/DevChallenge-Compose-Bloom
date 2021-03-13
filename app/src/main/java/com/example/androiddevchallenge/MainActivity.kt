@@ -58,6 +58,9 @@ fun MyApp() {
                     )
                 }
                 Screen.LOGIN -> {
+                    LoginScreen(
+                        onClick = { currentScreen = Screen.HOME }
+                    )
                 }
                 Screen.HOME -> {
                 }
