@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -36,7 +37,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.theme.pink900
-import com.example.androiddevchallenge.ui.util.firstBaselineToTop
 
 @Composable
 fun WelcomeScreen(onClick: () -> Unit) {
@@ -44,7 +44,6 @@ fun WelcomeScreen(onClick: () -> Unit) {
     Column() {
         Spacer(Modifier.height(72.dp))
         Logo()
-        Spacer(Modifier.height(40.dp))
         // Create Account
         Button(
             onClick = { },
@@ -58,7 +57,6 @@ fun WelcomeScreen(onClick: () -> Unit) {
         ) {
             Text(
                 text = "Create account",
-                Modifier.clickable(onClick = onClick),
                 color = Color.White
             )
         }
@@ -104,9 +102,8 @@ fun Logo(modifier: Modifier = Modifier) {
         Text(
             text = "Beautiful home garden solutions",
             Modifier
-                .firstBaselineToTop(32.dp)
+                .paddingFromBaseline(top = 32.dp, bottom = 40.dp)
                 .align(Alignment.CenterHorizontally)
-                .height(32.dp)
         )
     }
 }
