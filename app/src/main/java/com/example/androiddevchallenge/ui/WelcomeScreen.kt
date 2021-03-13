@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.theme.pink900
+import com.example.androiddevchallenge.ui.util.firstBaselineToTop
 
 @Composable
 fun WelcomeScreen(onClick: () -> Unit) {
@@ -103,6 +104,7 @@ fun Logo(modifier: Modifier = Modifier) {
         Text(
             text = "Beautiful home garden solutions",
             Modifier
+                .firstBaselineToTop(32.dp)
                 .align(Alignment.CenterHorizontally)
                 .height(32.dp)
         )
